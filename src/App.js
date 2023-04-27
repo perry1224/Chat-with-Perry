@@ -97,7 +97,7 @@ return (
           <input value={value} onChange={(e) => setValue(e.target.value)} placeholder='Enter text here...'/>
           <div id="submit" onClick={getMessages}>➢</div>
         </div>
-        <p className="info"> Testing</p>
+        <p className="info"> This is a clone of ChatGPT for education experiences only</p>
       </div>
     </section>
   </div>
