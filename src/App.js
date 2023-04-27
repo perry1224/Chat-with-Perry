@@ -101,7 +101,7 @@ return (
       <div className="bottom-section">
         <div className="input-container">
           <input value={value} onChange={(e) => setValue(e.target.value)} placeholder='Enter text here...'  onKeyDown={handleKeyDown}/>
-          <div id="submit" onClick={getMessages}>➢</div>
+          <div id="submit" onClick={getMessages}>➤</div>
         </div>
         <p className="info"> This is a ChatGPT clone and is for educational purposes only</p>
       </div>
