@@ -68,6 +68,12 @@ console.log(previousChats)
 const currentChat = previousChats.filter(previousChat => previousChat.title===currentTitle)
 const uniqueTitles = Array.from(new Set(previousChats.map(previousChat => previousChat.title)))
 
+const handleKeyDown = (event) => {
+  if (event.key === 'Enter') {
+    getMessages()
+  }
+}
+
 return (
   <div className="app">
     <section className="side-bar">
@@ -94,7 +100,7 @@ return (
 
       <div className="bottom-section">
         <div className="input-container">
-          <input value={value} onChange={(e) => setValue(e.target.value)} placeholder='Enter text here...'/>
+          <input value={value} onChange={(e) => setValue(e.target.value)} placeholder='Enter text here...'  onKeyDown={handleKeyDown}/>
           <div id="submit" onClick={getMessages}>➢</div>
         </div>
         <p className="info"> This is a clone of ChatGPT for education experiences only</p>
