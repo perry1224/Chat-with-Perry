@@ -18,8 +18,6 @@ setMessage(null)
 setValue("")
 }
 
-const SERVER_URL = process.env.REACT_APP_SERVER_URL || 'http://localhost:8000/completions';
-
 
 const getMessages = async() => {
   const options = {
@@ -32,7 +30,7 @@ const getMessages = async() => {
     }
   }
   try {
-    const response = await fetch(`${SERVER_URL}/completions`, options)
+    const response = await fetch('http://localhost:8000/completions', options)
     const data = await response.json()
     
     setMessage(data.choices[0].message)
