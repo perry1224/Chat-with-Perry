@@ -97,6 +97,12 @@ input {
   bottom: 15px;
   right: 0;
   cursor: pointer;
+  transition: transform .2s 
+}
+
+#submit:hover {
+  transform: scale(1.2)
+
 }
 
 .feed {

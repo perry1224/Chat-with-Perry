@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 
 const App = () => {
-  const [value, setValue] = useState(null)
+  const [value, setValue] = useState("")
   const [message, setMessage] = useState(null)
   const [previousChats, setPreviousChats] = useState([])
   const [currentTitle, setCurrentTitle] = useState(null)
@@ -103,7 +103,7 @@ return (
           <input value={value} onChange={(e) => setValue(e.target.value)} placeholder='Enter text here...'  onKeyDown={handleKeyDown}/>
           <div id="submit" onClick={getMessages}>➢</div>
         </div>
-        <p className="info"> This is a clone of ChatGPT for education experiences only</p>
+        <p className="info"> This is a ChatGPT clone and is for educational purposes only</p>
       </div>
     </section>
   </div>

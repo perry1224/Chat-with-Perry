@@ -1,5 +1,6 @@
 {
   "name": "chatgptclone",
+  "homepage": "https://vercel.com/perryw1224/chat-with-perry",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
