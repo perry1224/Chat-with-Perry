@@ -130,16 +130,3 @@ input {
   min-width: 100px
 }
 
-@media screen and (max-width: 450px) {
-
-  .side-bar {
-    text-align: center;
-    float: none;
-    width: 100%;
-    display: block;
-  }
-  .history {
-    display: none;
-  }
-
-}
