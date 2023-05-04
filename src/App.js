@@ -40,7 +40,7 @@ const getMessages = async() => {
 }
 
 useEffect(() => {
-console.log(currentTitle, message)
+
   //if no new title but there's value in input and message came back, set current title to current value
 if (!currentTitle && value && message) {
   setCurrentTitle(value)
@@ -62,8 +62,6 @@ if (currentTitle && value && message) {
   ))
 }
 }, [message, currentTitle])
-
-console.log(previousChats)
 
 
 const currentChat = previousChats.filter(previousChat => previousChat.title===currentTitle)
