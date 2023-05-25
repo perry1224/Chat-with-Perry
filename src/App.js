@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react'
 
 const App = () => {
-  const [value, setValue] = useState(null)
+  const [value, setValue] = useState("")
   const [message, setMessage] = useState(null)
   const [previousChats, setPreviousChats] = useState([])
   const [currentTitle, setCurrentTitle] = useState(null)
@@ -17,6 +17,7 @@ setCurrentTitle(uniqueTitle)
 setMessage(null)
 setValue("")
 }
+
 
 const getMessages = async() => {
   const options = {
@@ -39,7 +40,7 @@ const getMessages = async() => {
 }
 
 useEffect(() => {
-console.log(currentTitle, message)
+
   //if no new title but there's value in input and message came back, set current title to current value
 if (!currentTitle && value && message) {
   setCurrentTitle(value)
@@ -62,11 +63,15 @@ if (currentTitle && value && message) {
 }
 }, [message, currentTitle])
 
-console.log(previousChats)
-
 
 const currentChat = previousChats.filter(previousChat => previousChat.title===currentTitle)
 const uniqueTitles = Array.from(new Set(previousChats.map(previousChat => previousChat.title)))
+
+const handleKeyDown = (event) => {
+  if (event.key === 'Enter') {
+    getMessages()
+  }
+}
 
 return (
   <div className="app">
@@ -94,10 +99,10 @@ return (
 
       <div className="bottom-section">
         <div className="input-container">
-          <input value={value} onChange={(e) => setValue(e.target.value)} placeholder='Enter text here...'/>
-          <div id="submit" onClick={getMessages}>➢</div>
+          <input value={value} onChange={(e) => setValue(e.target.value)} placeholder='Enter text here...'  onKeyDown={handleKeyDown}/>
+          <div id="submit" onClick={getMessages}>➤</div>
         </div>
-        <p className="info"> Testing</p>
+        <p className="info"> This is a ChatGPT clone and is for educational purposes only</p>
       </div>
     </section>
   </div>

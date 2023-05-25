@@ -94,9 +94,16 @@ input {
 
 #submit {
   position: absolute;
-  bottom: 15px;
+  font-size: 40px;
+  bottom: 0.4px;
   right: 0;
   cursor: pointer;
+  transition: transform .2s 
+}
+
+#submit:hover {
+  transform: scale(1.2)
+
 }
 
 .feed {
@@ -122,3 +129,4 @@ input {
 .feed p.role {
   min-width: 100px
 }
+
